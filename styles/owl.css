@@ -1,0 +1,23 @@
+.bg-secondary {
+    background-color: #222 !important;
+}
+
+.bg-primary {
+    background-color: #993300 !important;
+}
+
+.carousel-caption {
+    bottom: 45%;
+}
+
+.caption-text {
+    text-shadow: 2px 2px #222222;
+}
+
+.text-primary {
+    color: #993300 !important;
+}
+
+.text-secondary {
+    color: #222 !important;
+}
