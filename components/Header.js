@@ -6,9 +6,9 @@ const Header = () => {
             <div className="container">
                 <Link href="/" className="navbar-brand text-white">
                     <img src="https://galacticblue.net/cheekyginger/img/Kiss-1-Cheeky-Ginger-Studio.png" height="75" alt="Cheeky Ginger Studio" className="float-start" />
-                    Cheeky Ginger Studio<br />
+                    <span className="caption-text">Cheeky Ginger Studio<br />
                     One of a Kind Art<br />
-                    by artist S.J. Johnson
+                    by artist S.J. Johnson</span>
                 </Link>
                 <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
