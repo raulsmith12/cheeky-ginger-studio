@@ -12,7 +12,6 @@ const Home = () => {
       url: 'https://galacticblue.net/cheekyginger/backend/public/api/home-sections'
     })
     .then(result => {
-      console.log(result.data.data)
       setSections(result.data.data)
     })
     .catch(error => console.log(error));

@@ -8,7 +8,6 @@ import Footer from '../components/Footer';
 import Socials from '../components/Socials';
 
 function MyApp({ Component, pageProps }) {
-
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -30,4 +29,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default MyApp;

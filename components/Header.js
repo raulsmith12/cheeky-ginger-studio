@@ -35,9 +35,6 @@ const Header = () => {
                                 <li>
                                     <Link href="/products/prints" className="dropdown-item">Prints</Link>
                                 </li>
-                                <li>
-                                    <Link href="/products/chibi" className="dropdown-item">Chibi</Link>
-                                </li>
                             </ul>
                         </li>
                         <li className="nav-item px-1">
