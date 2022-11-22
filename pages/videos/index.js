@@ -1,13 +1,70 @@
 import ReactPlayer from 'react-player';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Videos = ({ data1, data2, data3, data4, data5 }) => {
+import { YouTubeKey } from '../../components/YouTubeKey';
+
+const Videos = () => {
+    const [data1, setData1] = useState([]);
+    const [data2, setData2] = useState([]);
+    const [data3, setData3] = useState([]);
+    const [data4, setData4] = useState([]);
+    const [data5, setData5] = useState([]);
+
+    const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
+
+    useEffect(() => {
+        (async () => {
+            axios({
+                method: 'GET',
+                url: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTgiTSvhYlJGwd820Y8ftOVrA&key=${YouTubeKey}`
+            })
+            .then(result => {
+                setData1(result.data.items)
+            })
+            .catch(error => console.log(error));
+            axios({
+                method: 'GET',
+                url: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTggkmM5fzYdzubMMFGqZEoiC&key=${YouTubeKey}`
+            })
+            .then(result => {
+                setData2(result.data.items)
+            })
+            .catch(error => console.log(error));
+            axios({
+                method: 'GET',
+                url: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTgjeDH9pxI4_gyLxQ-Z5itht&key=${YouTubeKey}`
+            })
+            .then(result => {
+                setData3(result.data.items)
+            })
+            .catch(error => console.log(error));
+            axios({
+                method: 'GET',
+                url: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTghUFl7kkO0p5zuE-0fzCbQ4&key=${YouTubeKey}`
+            })
+            .then(result => {
+                setData4(result.data.items)
+            })
+            .catch(error => console.log(error));
+            axios({
+                method: 'GET',
+                url: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTghOXTGDqzhcqEUoHL5vQP2F&key=${YouTubeKey}`
+            })
+            .then(result => {
+                setData5(result.data.items)
+            })
+            .catch(error => console.log(error));
+        })();
+    }, [])
+
     return (
         <>
             <h1 className="display-2 text-center">My YouTube Videos</h1>
             <div className="container shadow p-3 my-5 bg-body rounded">
                 <div className="row justify-content-center">
                     <h3>Collections</h3>
-                    {data1.items.map(({ id, snippet = {} }) => {
+                    {data1.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
                         return (
@@ -17,9 +74,10 @@ const Videos = ({ data1, data2, data3, data4, data5 }) => {
                         )
                     })}
                 </div>
+                <hr />
                 <div className="row justify-content-center">
                     <h3>Just For Fun</h3>
-                    {data2.items.map(({ id, snippet = {} }) => {
+                    {data2.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
                         return (
@@ -29,9 +87,10 @@ const Videos = ({ data1, data2, data3, data4, data5 }) => {
                         )
                     })}
                 </div>
+                <hr />
                 <div className="row justify-content-center">
                     <h3>Crafty Things</h3>
-                    {data3.items.map(({ id, snippet = {} }) => {
+                    {data3.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
                         return (
@@ -41,9 +100,10 @@ const Videos = ({ data1, data2, data3, data4, data5 }) => {
                         )
                     })}
                 </div>
+                <hr />
                 <div className="row justify-content-center">
                     <h3>Sculptures</h3>
-                    {data4.items.map(({ id, snippet = {} }) => {
+                    {data4.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
                         return (
@@ -53,9 +113,10 @@ const Videos = ({ data1, data2, data3, data4, data5 }) => {
                         )
                     })}
                 </div>
+                <hr />
                 <div className="row justify-content-center">
                     <h3>Journals</h3>
-                    {data5.items.map(({ id, snippet = {} }) => {
+                    {data5.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
                         return (
@@ -71,27 +132,3 @@ const Videos = ({ data1, data2, data3, data4, data5 }) => {
 }
 
 export default Videos;
-
-const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
-
-export async function getServerSideProps() {
-  const res1 = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTgiTSvhYlJGwd820Y8ftOVrA&key=${process.env.YOUTUBE_API_KEY}`)
-  const data1 = await res1.json();
-  const res2 = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTggkmM5fzYdzubMMFGqZEoiC&key=${process.env.YOUTUBE_API_KEY}`)
-  const data2 = await res2.json();
-  const res3 = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTgjeDH9pxI4_gyLxQ-Z5itht&key=${process.env.YOUTUBE_API_KEY}`)
-  const data3 = await res3.json();
-  const res4 = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTghUFl7kkO0p5zuE-0fzCbQ4&key=${process.env.YOUTUBE_API_KEY}`)
-  const data4 = await res4.json();
-  const res5 = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLUgjWZknLTghOXTGDqzhcqEUoHL5vQP2F&key=${process.env.YOUTUBE_API_KEY}`)
-  const data5 = await res5.json();
-  return {
-    props: {
-      data1,
-      data2,
-      data3,
-      data4,
-      data5
-    }
-  }
-}
