@@ -18,7 +18,7 @@ const Watercolors = () => {
 
     return (
         <>
-            <h1 className="display-2 text-center">Watercolors</h1>
+            <h1 className="display-2 text-center text-black">Watercolors</h1>
             <div className="container shadow p-3 my-5 bg-body rounded">
                 <div className="row justify-content-center">
                     {products.map(i => (
@@ -28,8 +28,8 @@ const Watercolors = () => {
                                     <img src={i.pictures[0].url} className="card-img-top" alt={i.title} />
                                 )}
                                 <div className="card-body">
-                                    <h5 className="card-title">{i.title}</h5>
-                                    <p className="card-text">{i.description}</p>
+                                    <h5 className="card-title text-black">{i.title}</h5>
+                                    <p className="card-text text-black">{i.description}</p>
                                     <Link href={`/products/${i.id}`}>
                                         <button className="btn btn-primary">See Product</button>
                                     </Link>

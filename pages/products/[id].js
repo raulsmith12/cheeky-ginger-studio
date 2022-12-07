@@ -63,7 +63,7 @@ const Product = () => {
 
     return (
         <>
-            <h1 className="display-2 text-center">{title}</h1>
+            <h1 className="display-2 text-center text-black">{title}</h1>
             <div className="row mb-4">
                 <div className="col-4 offset-2">
                     <img src={mainPic} width="85%" alt={title} />
@@ -71,16 +71,16 @@ const Product = () => {
                 <div className="col-4">
                     {price ? (
                         <>
-                            <h3>${price}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{sku}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{size}</h3>
+                            <h3 className="text-black">${price}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{sku}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{size}</h3>
                         </>
                     ) : (
                         <>
-                            <h3>Please select a print and size</h3>
+                            <h3 className="text-black">Please select a print and size</h3>
                         </>
                     )}
                     <div className="row">
                         <div className="col-6">
-                            <h4>Print</h4>
+                            <h4 className="text-black">Print</h4>
                             <select className="form-select" onChange={changePrints}>
                                 <option selected>Please select a print</option>
                                 {prints.map(i => (
@@ -91,7 +91,7 @@ const Product = () => {
                         <div className="col-6">
                             {sizes.length > 0 && (
                                 <>
-                                    <h4>Size</h4>
+                                    <h4 className="text-black">Size</h4>
                                     <select className="form-select" onChange={changeSize}>
                                         <option selected>Please select a size</option>
                                         {sizes.map(i => (
@@ -104,20 +104,20 @@ const Product = () => {
                     </div>
                     <div className="row mt-5">
                         <div className="col">
-                            <p>{description}</p>
+                            <p className="text-black">{description}</p>
                         </div>
                     </div>
                     <div className="row mt-5">
                         <div className="col-12">
-                            <h6>Tags</h6>
-                            <p>
+                            <h6 className="text-black">Tags</h6>
+                            <p className="text-black">
                                 {tags.map(i => (
                                     <span key={i.id}>{i.tag}&nbsp;|&nbsp;</span>
                                 ))}
                             </p>
                         </div>
                         <div className="col-12">
-                            <h6>Additional Pictures</h6>
+                            <h6 className="text-black">Additional Pictures</h6>
                             <p>
                                 {pictures.map(i => (
                                     <a key={i.id} onClick={() => setMainPic(i.url)}>

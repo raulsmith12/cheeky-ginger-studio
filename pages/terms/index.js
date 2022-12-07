@@ -17,10 +17,10 @@ const Terms = () => {
 
     return (
         <>
-            <h1 className="display-2 text-center">Terms of Service</h1>
+            <h1 className="display-2 text-center text-black">Terms of Service</h1>
             <div className="container shadow p-3 my-5 bg-body rounded">
                 <div className="row">
-                    <div className="col" dangerouslySetInnerHTML={{__html: content}} />
+                    <div className="col text-black" dangerouslySetInnerHTML={{__html: content}} />
                 </div>
             </div>
         </>

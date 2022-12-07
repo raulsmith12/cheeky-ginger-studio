@@ -32,7 +32,7 @@ const Home = () => {
           <HomeSlider />
           <div className="container shadow p-3 my-5 bg-body rounded">
             <div className="row">
-              <div dangerouslySetInnerHTML={{__html: field}} className="col py-3" />
+              <div dangerouslySetInnerHTML={{__html: field}} className="col py-3 text-black" />
             </div>
             <div className="row justify-content-center">
               {sections.map(i => (

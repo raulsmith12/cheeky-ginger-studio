@@ -3,6 +3,7 @@ import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import '../styles/owl.css';
+import Transition from '../components/Transition';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Socials from '../components/Socials';
@@ -21,9 +22,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <div className="container-fluid px-0">
         <Header />
-        <Component {...pageProps} />
-        <Socials />
-        <Footer />
+        <Transition>
+          <Component {...pageProps} />
+          <Socials />
+          <Footer />
+        </Transition>
       </div>
     </>
   )

@@ -60,10 +60,10 @@ const Videos = () => {
 
     return (
         <>
-            <h1 className="display-2 text-center">My YouTube Videos</h1>
+            <h1 className="display-2 text-center text-black">My YouTube Videos</h1>
             <div className="container shadow p-3 my-5 bg-body rounded">
                 <div className="row justify-content-center">
-                    <h3>Collections</h3>
+                    <h3 className="text-black">Collections</h3>
                     {data1.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
@@ -76,7 +76,7 @@ const Videos = () => {
                 </div>
                 <hr />
                 <div className="row justify-content-center">
-                    <h3>Just For Fun</h3>
+                    <h3 className="text-black">Just For Fun</h3>
                     {data2.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
@@ -89,7 +89,7 @@ const Videos = () => {
                 </div>
                 <hr />
                 <div className="row justify-content-center">
-                    <h3>Crafty Things</h3>
+                    <h3 className="text-black">Crafty Things</h3>
                     {data3.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
@@ -102,7 +102,7 @@ const Videos = () => {
                 </div>
                 <hr />
                 <div className="row justify-content-center">
-                    <h3>Sculptures</h3>
+                    <h3 className="text-black">Sculptures</h3>
                     {data4.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
@@ -115,7 +115,7 @@ const Videos = () => {
                 </div>
                 <hr />
                 <div className="row justify-content-center">
-                    <h3>Journals</h3>
+                    <h3 className="text-black">Journals</h3>
                     {data5.map(({ id, snippet = {} }) => {
                         const { resourceId = {} } = snippet;
 
