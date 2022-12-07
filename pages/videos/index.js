@@ -59,75 +59,72 @@ const Videos = () => {
     }, [])
 
     return (
-        <>
-            <h1 className="display-2 text-center text-black">My YouTube Videos</h1>
-            <div className="container shadow p-3 my-5 bg-body rounded">
-                <div className="row justify-content-center">
-                    <h3 className="text-black">Collections</h3>
-                    {data1.map(({ id, snippet = {} }) => {
-                        const { resourceId = {} } = snippet;
-
-                        return (
-                            <div className="col-4 py-2" key={id}>
-                                <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
-                            </div>
-                        )
-                    })}
-                </div>
-                <hr />
-                <div className="row justify-content-center">
-                    <h3 className="text-black">Just For Fun</h3>
-                    {data2.map(({ id, snippet = {} }) => {
-                        const { resourceId = {} } = snippet;
-
-                        return (
-                            <div className="col-4 py-2" key={id}>
-                                <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
-                            </div>
-                        )
-                    })}
-                </div>
-                <hr />
-                <div className="row justify-content-center">
-                    <h3 className="text-black">Crafty Things</h3>
-                    {data3.map(({ id, snippet = {} }) => {
-                        const { resourceId = {} } = snippet;
-
-                        return (
-                            <div className="col-4 py-2" key={id}>
-                                <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
-                            </div>
-                        )
-                    })}
-                </div>
-                <hr />
-                <div className="row justify-content-center">
-                    <h3 className="text-black">Sculptures</h3>
-                    {data4.map(({ id, snippet = {} }) => {
-                        const { resourceId = {} } = snippet;
-
-                        return (
-                            <div className="col-4 py-2" key={id}>
-                                <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
-                            </div>
-                        )
-                    })}
-                </div>
-                <hr />
-                <div className="row justify-content-center">
-                    <h3 className="text-black">Journals</h3>
-                    {data5.map(({ id, snippet = {} }) => {
-                        const { resourceId = {} } = snippet;
-
-                        return (
-                            <div className="col-4 py-2" key={id}>
-                                <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
-                            </div>
-                        )
-                    })}
+        <div className="row">
+            <div className="col">
+                <h1 className="display-2 text-center text-black">My YouTube Videos</h1>
+                <div className="container shadow p-3 my-5 bg-body rounded">
+                    <div className="row justify-content-center">
+                        <h3 className="text-black">Collections</h3>
+                        {data1.map(({ id, snippet = {} }) => {
+                            const { resourceId = {} } = snippet;
+                            return (
+                                <div className="col-4 py-2" key={id}>
+                                    <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <hr />
+                    <div className="row justify-content-center">
+                        <h3 className="text-black">Just For Fun</h3>
+                        {data2.map(({ id, snippet = {} }) => {
+                            const { resourceId = {} } = snippet;
+                            return (
+                                <div className="col-4 py-2" key={id}>
+                                    <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <hr />
+                    <div className="row justify-content-center">
+                        <h3 className="text-black">Crafty Things</h3>
+                        {data3.map(({ id, snippet = {} }) => {
+                            const { resourceId = {} } = snippet;
+                            return (
+                                <div className="col-4 py-2" key={id}>
+                                    <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <hr />
+                    <div className="row justify-content-center">
+                        <h3 className="text-black">Sculptures</h3>
+                        {data4.map(({ id, snippet = {} }) => {
+                            const { resourceId = {} } = snippet;
+                            return (
+                                <div className="col-4 py-2" key={id}>
+                                    <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <hr />
+                    <div className="row justify-content-center">
+                        <h3 className="text-black">Journals</h3>
+                        {data5.map(({ id, snippet = {} }) => {
+                            const { resourceId = {} } = snippet;
+                            return (
+                                <div className="col-4 py-2" key={id}>
+                                    <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

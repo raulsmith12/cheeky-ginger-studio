@@ -16,14 +16,16 @@ const Privacy = () => {
     }, [])
 
     return (
-        <>
-            <h1 className="display-2 text-center text-black">Privacy Policy</h1>
-            <div className="container shadow p-3 my-5 bg-body rounded">
-                <div className="row">
-                    <div className="col text-black" dangerouslySetInnerHTML={{__html: content}} />
+        <div className="row">
+            <div className="col">
+                <h1 className="display-2 text-center text-black">Privacy Policy</h1>
+                <div className="container shadow p-3 my-5 bg-body rounded">
+                    <div className="row">
+                        <div className="col text-black" dangerouslySetInnerHTML={{__html: content}} />
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
