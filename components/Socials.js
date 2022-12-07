@@ -17,10 +17,10 @@ const Socials = () => {
     }, []);
 
     return (
-        <div className="row">
-            <div className="col">
+        <div className="row mx-0">
+            <div className="col px-0">
                 <div className="container-fluid pb-4 text-center border-top border-light pt-2 bg-secondary text-white">
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         {socials.map(i => (
                             <div className="col-1" key={i.id}>
                                 <Link href={i.url} target="_blank">

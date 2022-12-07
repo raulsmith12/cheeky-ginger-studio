@@ -62,11 +62,11 @@ const Product = () => {
     }
 
     return (
-        <div className="row">
-            <div className="col">
+        <div className="row mx-0">
+            <div className="col px-0">
                 <div className="container-fluid">
                     <h1 className="display-2 text-center text-black">{title}</h1>
-                    <div className="row mb-4">
+                    <div className="row mx-0 mb-4">
                         <div className="col-4 offset-2">
                             <img src={mainPic} width="85%" alt={title} />
                         </div>
@@ -80,56 +80,58 @@ const Product = () => {
                                     <h3 className="text-black">Please select a print and size</h3>
                                 </>
                             )}
-                            <div className="row">
-                                <div className="col-6">
-                                    <h4 className="text-black">Print</h4>
-                                    <select className="form-select" onChange={changePrints}>
-                                        <option selected>Please select a print</option>
-                                        {prints.map(i => (
-                                            <option key={i.id} value={i.id}>{i.print_type}</option>
-                                        ))}
-                                    </select>
+                            <div className="container-fluid">
+                                <div className="row mx-0">
+                                    <div className="col-6">
+                                        <h4 className="text-black">Print</h4>
+                                        <select className="form-select" onChange={changePrints}>
+                                            <option selected>Please select a print</option>
+                                            {prints.map(i => (
+                                                <option key={i.id} value={i.id}>{i.print_type}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="col-6">
+                                        {sizes.length > 0 && (
+                                            <>
+                                                <h4 className="text-black">Size</h4>
+                                                <select className="form-select" onChange={changeSize}>
+                                                    <option selected>Please select a size</option>
+                                                    {sizes.map(i => (
+                                                        <option key={i.id} value={i.id}>{i.print_size}</option>
+                                                    ))}
+                                                </select>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
-                                <div className="col-6">
-                                    {sizes.length > 0 && (
-                                        <>
-                                            <h4 className="text-black">Size</h4>
-                                            <select className="form-select" onChange={changeSize}>
-                                                <option selected>Please select a size</option>
-                                                {sizes.map(i => (
-                                                    <option key={i.id} value={i.id}>{i.print_size}</option>
-                                                ))}
-                                            </select>
-                                        </>
-                                    )}
+                                <div className="row mx-0 mt-5">
+                                    <div className="col">
+                                        <p className="text-black">{description}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="row mt-5">
-                                <div className="col">
-                                    <p className="text-black">{description}</p>
-                                </div>
-                            </div>
-                            <div className="row mt-5">
-                                <div className="col-12">
-                                    <h6 className="text-black">Tags</h6>
-                                    <p className="text-black">
-                                        {tags.map(i => (
-                                            <span key={i.id}>{i.tag}&nbsp;|&nbsp;</span>
-                                        ))}
-                                    </p>
-                                </div>
-                                <div className="col-12">
-                                    <h6 className="text-black">Additional Pictures</h6>
-                                    <p>
-                                        {pictures.map(i => (
-                                            <a key={i.id} onClick={() => setMainPic(i.url)}>
-                                                <img src={i.url} height="50" className="float-start" />
-                                            </a>
-                                        ))}
-                                    </p>
-                                </div>
-                                <div className="col-12">
-                                    {/* Paypal and other payment options here */}
+                                <div className="row mx-0 mt-5">
+                                    <div className="col-12 px-0">
+                                        <h6 className="text-black">Tags</h6>
+                                        <p className="text-black">
+                                            {tags.map(i => (
+                                                <span key={i.id}>{i.tag}&nbsp;|&nbsp;</span>
+                                            ))}
+                                        </p>
+                                    </div>
+                                    <div className="col-12 px-0">
+                                        <h6 className="text-black">Additional Pictures</h6>
+                                        <p>
+                                            {pictures.map(i => (
+                                                <a key={i.id} onClick={() => setMainPic(i.url)}>
+                                                    <img src={i.url} height="50" className="float-start" />
+                                                </a>
+                                            ))}
+                                        </p>
+                                    </div>
+                                    <div className="col-12 px-0">
+                                        {/* Paypal and other payment options here */}
+                                    </div>
                                 </div>
                             </div>
                         </div>

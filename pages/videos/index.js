@@ -59,11 +59,11 @@ const Videos = () => {
     }, [])
 
     return (
-        <div className="row">
-            <div className="col">
+        <div className="row mx-0">
+            <div className="col px-0">
                 <h1 className="display-2 text-center text-black">My YouTube Videos</h1>
                 <div className="container shadow p-3 my-5 bg-body rounded">
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         <h3 className="text-black">Collections</h3>
                         {data1.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
@@ -75,7 +75,7 @@ const Videos = () => {
                         })}
                     </div>
                     <hr />
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         <h3 className="text-black">Just For Fun</h3>
                         {data2.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
@@ -87,7 +87,7 @@ const Videos = () => {
                         })}
                     </div>
                     <hr />
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         <h3 className="text-black">Crafty Things</h3>
                         {data3.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
@@ -99,7 +99,7 @@ const Videos = () => {
                         })}
                     </div>
                     <hr />
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         <h3 className="text-black">Sculptures</h3>
                         {data4.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
@@ -111,7 +111,7 @@ const Videos = () => {
                         })}
                     </div>
                     <hr />
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         <h3 className="text-black">Journals</h3>
                         {data5.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;

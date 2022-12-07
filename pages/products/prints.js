@@ -17,11 +17,11 @@ const Prints = () => {
     }, [])
 
     return (
-        <div className="row">
-            <div className="col">
+        <div className="row mx-0">
+            <div className="col px-0">
                 <h1 className="display-2 text-center text-black">Prints</h1>
                 <div className="container shadow p-3 my-5 bg-body rounded">
-                    <div className="row justify-content-center">
+                    <div className="row mx-0 justify-content-center">
                         {products.map(i => (
                             <div className="col-4 my-2" key={i.id}>
                                 <div className="card">

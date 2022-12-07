@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Header = () => {
     return (
-        <div className="row">
-            <div className="col">
+        <div className="row mx-0">
+            <div className="col px-0">
                 <nav className="navbar navbar-expand-lg bg-primary sticky-top">
                     <div className="container">
                         <Link href="/" className="navbar-brand text-white">

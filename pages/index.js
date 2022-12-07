@@ -26,14 +26,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="row">
-      <div className="col">
+    <div className="row mx-0">
+      <div className="col px-0">
         <HomeSlider />
         <div className="container shadow p-3 my-5 bg-body rounded">
-          <div className="row">
-            <div dangerouslySetInnerHTML={{__html: field}} className="col py-3 text-black" />
+          <div className="row mx-0">
+            <div dangerouslySetInnerHTML={{__html: field}} className="col px-0 py-3 text-black" />
           </div>
-          <div className="row justify-content-center">
+          <div className="row mx-0 justify-content-center">
             {sections.map(i => (
               <div className="col-3 p-2 m-2 text-center" key={i.id}>
                 <h2 className="text-primary">{i.title}</h2>
