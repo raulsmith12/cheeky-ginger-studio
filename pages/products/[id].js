@@ -84,8 +84,8 @@ const Product = () => {
                                 <div className="row mx-0">
                                     <div className="col-6">
                                         <h4 className="text-black">Print</h4>
-                                        <select className="form-select" onChange={changePrints}>
-                                            <option selected>Please select a print</option>
+                                        <select className="form-select" defaultValue="" onChange={changePrints}>
+                                            <option value="">Please select a print</option>
                                             {prints.map(i => (
                                                 <option key={i.id} value={i.id}>{i.print_type}</option>
                                             ))}
@@ -95,8 +95,8 @@ const Product = () => {
                                         {sizes.length > 0 && (
                                             <>
                                                 <h4 className="text-black">Size</h4>
-                                                <select className="form-select" onChange={changeSize}>
-                                                    <option selected>Please select a size</option>
+                                                <select className="form-select" defaultValue="" onChange={changeSize}>
+                                                    <option value="">Please select a size</option>
                                                     {sizes.map(i => (
                                                         <option key={i.id} value={i.id}>{i.print_size}</option>
                                                     ))}
