@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
 import { useRouter } from 'next/router';
 
 const Product = () => {
+    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
     const router = useRouter();
     const { id } = router.query;
     const [title, setTitle] = useState();
@@ -15,6 +18,7 @@ const Product = () => {
     const [size, setSize] = useState();
     const [mainPic, setMainPic] = useState();
     const [sizes, setSizes] = useState([]);
+    const [print, setPrint] = useState('');
 
     useEffect(() => {
         axios({
@@ -40,6 +44,7 @@ const Product = () => {
             })
             .then(result => {
                 setSizes(result.data.data.sizes),
+                setPrint(e.target.value);
                 setPrice()
             })
             .catch(error => console.log(error))
@@ -60,6 +65,23 @@ const Product = () => {
             .catch(error => console.log(error))
         }
     }
+
+    const createCheckOutSession = async () => {
+        const stripe = await stripePromise;
+        const checkoutSession = await axios.post('/api/create-stripe-session', {
+          item: {
+            picture: mainPic,
+            price: Math.ceil(price * 100),
+            title: sku + ' - ' + title + ' / ' + size,
+          }
+        });
+        const result = await stripe.redirectToCheckout({
+          sessionId: checkoutSession.data.id,
+        });
+        if (result.error) {
+          alert(result.error.message);
+        }
+    };
 
     return (
         <div className="row mx-0">
@@ -84,7 +106,7 @@ const Product = () => {
                                 <div className="row mx-0">
                                     <div className="col-6">
                                         <h4 className="text-black">Print</h4>
-                                        <select className="form-select" defaultValue="" onChange={changePrints}>
+                                        <select className="form-select" defaultValue="" onChange={e => changePrints(e)}>
                                             <option value="">Please select a print</option>
                                             {prints.map(i => (
                                                 <option key={i.id} value={i.id}>{i.print_type}</option>
@@ -130,6 +152,11 @@ const Product = () => {
                                         </p>
                                     </div>
                                     <div className="col-12 px-0">
+                                        {price && (
+                                            <button className="btn btn-success" onClick={createCheckOutSession}>
+                                                Buy at {price}
+                                            </button>
+                                        )}
                                         {/* Paypal and other payment options here */}
                                     </div>
                                 </div>
