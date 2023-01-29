@@ -27,6 +27,10 @@ function MyApp({ Component, pageProps }) {
           <Socials />
           <Footer />
         </Transition>
+        <div className="alert alert-success alert-dismissible fade show fixed-bottom" role="alert">
+          <p>Paddy Wack Homemade Gifts uses cookies to better the web experience for everyone. We have a strict privacy policy that prohibits us from selling user information to third party advertisers.</p>
+          <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
+        </div>
       </div>
     </>
   )

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { useRouter } from 'next/router';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import PayPalButtonContainer from '../../components/PayPalButtonContainer';
 
 const Product = () => {
     const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
@@ -151,14 +153,22 @@ const Product = () => {
                                             ))}
                                         </p>
                                     </div>
-                                    <div className="col-12 px-0">
-                                        {price && (
-                                            <button className="btn btn-success" onClick={createCheckOutSession}>
-                                                Buy at {price}
+                                    {price && (
+                                        <div className="col-12 px-0 pt-2 d-grid gap-2">
+                                            <PayPalScriptProvider
+                                                options={{
+                                                    "client-id": "test",
+                                                    components: "buttons",
+                                                    currency: "USD"
+                                                }}
+                                            >
+                                                <PayPalButtonContainer currency="USD" showSpinner={false} price={price} />
+                                            </PayPalScriptProvider>
+                                            <button className="btn btn-lg btn-success" type="button" onClick={createCheckOutSession}>
+                                                Buy with Stripe at {price}
                                             </button>
-                                        )}
-                                        {/* Paypal and other payment options here */}
-                                    </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
