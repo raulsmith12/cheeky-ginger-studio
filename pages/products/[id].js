@@ -91,10 +91,10 @@ const Product = () => {
                 <div className="container-fluid">
                     <h1 className="display-2 text-center text-black">{title}</h1>
                     <div className="row mx-0 mb-4">
-                        <div className="col-4 offset-2">
+                        <div className="col-lg-4 offset-lg-2 col-md-6 col-sm-12">
                             <img src={mainPic} width="85%" alt={title} />
                         </div>
-                        <div className="col-4">
+                        <div className="col-lg-4 col-md-6 col-sm-12">
                             {price ? (
                                 <>
                                     <h3 className="text-black">${price}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{sku}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{size}</h3>
@@ -106,7 +106,7 @@ const Product = () => {
                             )}
                             <div className="container-fluid">
                                 <div className="row mx-0">
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                         <h4 className="text-black">Print</h4>
                                         <select className="form-select" defaultValue="" onChange={e => changePrints(e)}>
                                             <option value="">Please select a print</option>
@@ -115,7 +115,7 @@ const Product = () => {
                                             ))}
                                         </select>
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                         {sizes.length > 0 && (
                                             <>
                                                 <h4 className="text-black">Size</h4>

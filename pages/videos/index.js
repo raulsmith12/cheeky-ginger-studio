@@ -68,7 +68,7 @@ const Videos = () => {
                         {data1.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
                             return (
-                                <div className="col-4 py-2" key={id}>
+                                <div className="col-lg-4 col-md-6 col-sm-12 py-2" key={id}>
                                     <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
                                 </div>
                             )
@@ -80,7 +80,7 @@ const Videos = () => {
                         {data2.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
                             return (
-                                <div className="col-4 py-2" key={id}>
+                                <div className="col-lg-4 col-md-6 col-sm-12 py-2" key={id}>
                                     <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
                                 </div>
                             )
@@ -92,7 +92,7 @@ const Videos = () => {
                         {data3.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
                             return (
-                                <div className="col-4 py-2" key={id}>
+                                <div className="col-lg-4 col-md-6 col-sm-12 py-2" key={id}>
                                     <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
                                 </div>
                             )
@@ -104,7 +104,7 @@ const Videos = () => {
                         {data4.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
                             return (
-                                <div className="col-4 py-2" key={id}>
+                                <div className="col-lg-4 col-md-6 col-sm-12 py-2" key={id}>
                                     <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
                                 </div>
                             )
@@ -116,7 +116,7 @@ const Videos = () => {
                         {data5.map(({ id, snippet = {} }) => {
                             const { resourceId = {} } = snippet;
                             return (
-                                <div className="col-4 py-2" key={id}>
+                                <div className="col-lg-4 col-md-6 col-sm-12 py-2" key={id}>
                                     <ReactPlayer url={`https://www.youtube.com/watch?v=${resourceId.videoId}`} width="90%" />
                                 </div>
                             )
