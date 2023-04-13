@@ -7,7 +7,7 @@ const Header = () => {
                 <nav className="navbar navbar-expand-lg bg-primary sticky-top">
                     <div className="container">
                         <Link href="/" className="navbar-brand text-white">
-                            <img src="https://galacticblue.net/cheekyginger/img/Kiss-1-Cheeky-Ginger-Studio.png" height="75" alt="Cheeky Ginger Studio" className="float-start" />
+                            <img src="https://cheekygingerstudios.com/img/Kiss-1-Cheeky-Ginger-Studio.png" height="75" alt="Cheeky Ginger Studio" className="float-start" />
                             <span className="caption-text">Cheeky Ginger Studio<br />
                             One of a Kind Art<br />
                             by artist S.J. Johnson</span>

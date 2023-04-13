@@ -7,7 +7,7 @@ const Terms = () => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://galacticblue.net/cheekyginger/backend/public/api/terms-pages'
+            url: 'https://backend.cheekygingerstudios.com/public/api/terms-pages'
         })
         .then(result => {
             setContent(result.data.data[0].text)

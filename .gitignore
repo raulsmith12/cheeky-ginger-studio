@@ -36,3 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 /components/YouTubeKey.js
+/components/PayPalId.js

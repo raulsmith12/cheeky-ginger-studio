@@ -10,7 +10,7 @@ const Watercolors = () => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://galacticblue.net/cheekyginger/backend/public/api/products'
+            url: 'https://backend.cheekygingerstudios.com/public/api/products'
         })
         .then(result => {
             setProducts(result.data.data.filter(i => i.category === 'watercolors'))

@@ -7,7 +7,7 @@ const HomeSlider = () => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://galacticblue.net/cheekyginger/backend/public/api/home-sliders'
+            url: 'https://backend.cheekygingerstudios.com/public/api/home-sliders'
         })
         .then(result => {
             setSliders(result.data.data)

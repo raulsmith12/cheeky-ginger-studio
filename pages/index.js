@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'https://galacticblue.net/cheekyginger/backend/public/api/home-sections'
+      url: 'https://backend.cheekygingerstudios.com/public/api/home-sections'
     })
     .then(result => {
       setSections(result.data.data)
@@ -21,7 +21,7 @@ const Home = () => {
     .catch(error => console.log(error));
     axios({
       method: 'get',
-      url: 'https://galacticblue.net/cheekyginger/backend/public/api/home-fields'
+      url: 'https://backend.cheekygingerstudios.com/public/api/home-fields'
     })
     .then(result => {
       setField(result.data.data[0].description)

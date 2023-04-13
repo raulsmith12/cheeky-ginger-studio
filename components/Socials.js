@@ -8,7 +8,7 @@ const Socials = () => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://galacticblue.net/cheekyginger/backend/public/api/socials'
+            url: 'https://backend.cheekygingerstudios.com/public/api/socials'
         })
         .then(result => {
             setSocials(result.data.data)

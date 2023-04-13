@@ -3,6 +3,7 @@ import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { useRouter } from 'next/router';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { PayPalId } from '../../components/PayPalId';
 import PayPalButtonContainer from '../../components/PayPalButtonContainer';
 
 const Product = () => {
@@ -25,7 +26,7 @@ const Product = () => {
     useEffect(() => {
         axios({
             method: 'GET',
-            url: `https://galacticblue.net/cheekyginger/backend/public/api/products/${id}`
+            url: `https://backend.cheekygingerstudios.com/public/api/products/${id}`
         })
         .then(result => {
             setTitle(result.data.data.title),
@@ -42,7 +43,7 @@ const Product = () => {
         if (e.target.value !== 'Please select a print') {
             axios({
                 method: 'GET',
-                url: `https://galacticblue.net/cheekyginger/backend/public/api/products/prints/${e.target.value}`
+                url: `https://backend.cheekygingerstudios.com/public/api/products/prints/${e.target.value}`
             })
             .then(result => {
                 setSizes(result.data.data.sizes),
@@ -57,7 +58,7 @@ const Product = () => {
         if (e.target.value !== 'Please select a size') {
             axios({
                 method: 'GET',
-                url: `https://galacticblue.net/cheekyginger/backend/public/api/products/sizes/${e.target.value}`
+                url: `https://backend.cheekygingerstudios.com/public/api/products/sizes/${e.target.value}`
             })
             .then(result => {
                 setPrice(result.data.data.price),
@@ -155,15 +156,15 @@ const Product = () => {
                                     </div>
                                     {price && (
                                         <div className="col-12 px-0 pt-2 d-grid gap-2">
-                                            <PayPalScriptProvider
+                                            {/* <PayPalScriptProvider
                                                 options={{
-                                                    "client-id": "test",
+                                                    "client-id": PayPalId,
                                                     components: "buttons",
                                                     currency: "USD"
                                                 }}
                                             >
                                                 <PayPalButtonContainer currency="USD" showSpinner={false} price={price} />
-                                            </PayPalScriptProvider>
+                                            </PayPalScriptProvider> */}
                                             <button className="btn btn-lg btn-success" type="button" onClick={createCheckOutSession}>
                                                 Buy with Stripe at {price}
                                             </button>

@@ -7,7 +7,7 @@ const Privacy = () => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://galacticblue.net/cheekyginger/backend/public/api/privacy-pages'
+            url: 'https://backend.cheekygingerstudios.com/public/api/privacy-pages'
         })
         .then(result => {
             setContent(result.data.data[0].text)
