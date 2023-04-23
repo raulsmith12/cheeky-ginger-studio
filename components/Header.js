@@ -1,6 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
 const Header = () => {
+    function hideNavbar() {
+        const element = document.getElementById('navbarSupportedContent');
+        element.classList.remove('show');
+    }
+
     return (
         <div className="row mx-0">
             <div className="col px-0">
@@ -21,10 +27,10 @@ const Header = () => {
                                     <Link href="/" className="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown">Home</Link>
                                     <ul className="dropdown-menu">
                                         <li>
-                                            <Link href="/privacy" className="dropdown-item">Privacy Policy</Link>
+                                            <Link href="/privacy" className="dropdown-item" onClick={hideNavbar}>Privacy Policy</Link>
                                         </li>
                                         <li>
-                                            <Link href="/terms" className="dropdown-item">Terms of Service</Link>
+                                            <Link href="/terms" className="dropdown-item" onClick={hideNavbar}>Terms of Service</Link>
                                         </li>
                                     </ul>
                                 </li>
@@ -32,15 +38,15 @@ const Header = () => {
                                     <Link href="/" className="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown">Products</Link>
                                     <ul className="dropdown-menu">
                                         <li>
-                                            <Link href="/products/watercolors" className="dropdown-item">Watercolors</Link>
+                                            <Link href="/products/watercolors" className="dropdown-item" onClick={hideNavbar}>Watercolors</Link>
                                         </li>
                                         <li>
-                                            <Link href="/products/prints" className="dropdown-item">Prints</Link>
+                                            <Link href="/products/prints" className="dropdown-item" onClick={hideNavbar}>Prints</Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item px-1">
-                                    <Link href="/videos" className="nav-link text-white">YouTube Videos</Link>
+                                    <Link href="/videos" className="nav-link text-white" onClick={hideNavbar}>YouTube Videos</Link>
                                 </li>
                             </ul>
                         </div>

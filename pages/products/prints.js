@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -64,13 +65,13 @@ const Prints = () => {
                     <h1 className="display-2 text-center text-black">Prints</h1>
                     <div className="container shadow p-3 my-5 bg-body rounded">
                         <div className="row my-2 mx-5 px-5 justify-content-center">
-                            <div className="col-12 mx-5 px-5">
+                            <div className="col-12 mx-md-5 px-md-5 mx-sm-0 px-sm-0">
                                 <SearchBox category="Prints" searchChange={setSearch} />
                             </div>
                         </div>
                         <div className="row mx-0 justify-content-center">
                             {filteredProducts.map(i => (
-                                <div className="col-4 my-2" key={i.id}>
+                                <div className="col-md-4 col-sm-12 my-2" key={i.id}>
                                     <div className="card">
                                         {i.pictures.length > 0 && (
                                             <img src={i.pictures[0].url} className="card-img-top" alt={i.title} />

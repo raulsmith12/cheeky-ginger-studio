@@ -85,7 +85,7 @@ const Home = () => {
             </div>
             <div className="row mx-0 justify-content-center">
               {sections.map(i => (
-                <div className="col-3 p-2 m-2 text-center" key={i.id}>
+                <div className="col-md-3 col-sm-12 p-2 m-2 text-center" key={i.id}>
                   <h2 className="text-primary">{i.title}</h2>
                   <h6 className="text-secondary">{i.description}</h6>
                 </div>
