@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Disallow: /404
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cheekygingerstudios.com/
+
+# Sitemaps
+Sitemap: https://cheekygingerstudios.com/sitemap.xml
+Sitemap: https://cheekygingerstudios.com/server-sitemap.xml
