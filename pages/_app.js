@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import '../styles/owl.css';
+import CookieConsent from "react-cookie-consent";
 import Transition from '../components/Transition';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -20,10 +21,14 @@ function MyApp({ Component, pageProps }) {
         <Socials />
         <Footer />
       </Transition>
-      <div className="alert alert-success alert-dismissible fade show fixed-bottom" role="alert">
-        <p>Cheeky Ginger Studio uses cookies to better the web experience for everyone. We have a strict privacy policy that prohibits us from selling user information to third party advertisers.</p>
-        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
-      </div>
+      <CookieConsent
+        location="bottom"
+        buttonText="Okay"
+        buttonStyle={{ backgroundColor: "#232323", color: "white" }}
+        style={{ backgroundColor: "#993300", zIndex: 9999, border: "3px groove #767676" }}
+      >
+        Cheeky Ginger Studios uses cookies to better the web experience for everyone. We have a strict privacy policy that prohibits us from selling user information to third party advertisers. Please see our privacy policy for more information.
+      </CookieConsent>
     </div>
   )
 }
