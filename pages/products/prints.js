@@ -31,6 +31,7 @@ const Prints = () => {
                 <title>Prints - Cheeky Ginger Studios - One of a Kind Homemade Printed Art</title>
                 <meta name="title" content="Prints - Cheeky Ginger Studios - One of a Kind Homemade Printed Art" />
                 <meta name="description" content="Cheeky Ginger Studios offers unique one of a kind homemade printed art for any and every occasion. We also offer sketches and sculptings." />
+                <meta name="robots" content="all" />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://cheekygingerstudios.com/products/prints" />

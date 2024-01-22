@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -39,6 +40,7 @@ const Product = () => {
             setMainPic(result.data.data.pictures[0].url)
         })
         .catch(error => console.log(error))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const changePrints = e => {
@@ -73,7 +75,7 @@ const Product = () => {
 
     const createCheckOutSession = async () => {
         const stripe = await stripePromise;
-        const checkoutSession = await axios.post('/api/create-stripe-session', {
+        const checkoutSession = await axios.post('https://backend.cheekygingerstudios.com/public/api/create-stripe-session', {
           item: {
             picture: mainPic,
             price: Math.ceil(price * 100),
@@ -94,6 +96,7 @@ const Product = () => {
                 <title>Products - Cheeky Ginger Studios - One of a Kind Homemade Printed Art</title>
                 <meta name="title" content="Products - Cheeky Ginger Studios - One of a Kind Homemade Printed Art" />
                 <meta name="description" content="Cheeky Ginger Studios offers unique one of a kind homemade printed art for any and every occasion. We also offer sketches and sculptings." />
+                <meta name="robots" content="all" />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://cheekygingerstudios.com/products/prints" />
@@ -185,7 +188,7 @@ const Product = () => {
                                             <p>
                                                 {pictures.map(i => (
                                                     <a key={i.id} onClick={() => setMainPic(i.url)}>
-                                                        <img src={i.url} height="50" className="float-start" />
+                                                        <img src={i.url} height="50" className="float-start" alt={title} />
                                                     </a>
                                                 ))}
                                             </p>
