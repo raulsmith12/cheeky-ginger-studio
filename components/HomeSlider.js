@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 const HomeSlider = () => {
     const [sliders, setSliders] = useState([]);
@@ -20,7 +21,7 @@ const HomeSlider = () => {
             <div className="carousel-inner">
                 {sliders.map(i => (
                     <div className={"carousel-item " + (i.id === 1 && 'active')} key={i.id}>
-                        <img src={i.img_url} className="d-block w-100" alt={i.title} />
+                        <Image src={i.img_url} className="d-block w-100" alt={i.title} width={0} height={0} style={{ width: '100%', height: 'auto' }} />
                         <div className="carousel-caption d-none d-md-block">
                             <h2 className="display-2 text-center text-white caption-text">{i.title}</h2>
                             <h5 className="text-center text-white caption-text">{i.description}</h5>

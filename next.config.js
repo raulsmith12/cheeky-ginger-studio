@@ -7,7 +7,12 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
+  output: 'export',
   reactStrictMode: true,
   trailingSlash: true,
-  swcMinify: true,
+  skipTrailingSlashRedirect: true,
+  images: {
+    loader: 'custom',
+    loaderFile: './my-loader.js',
+  },
 })
